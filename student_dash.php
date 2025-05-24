@@ -8,10 +8,10 @@
 		<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
         <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
-	    <nav class="navbar navbar-fixed-top" id="top-nav">
+		<nav class="navbar navbar-fixed-top" id="top-nav">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand"  href="#"><b><u>UniRecruitX </u></b></a>
+					<a class="navbar-brand"  href="#">Campus Recruitment System</a>
 				</div>
 				<ul id="list1" class="nav navbar-nav">
 					<li class="active"><a href="student_dash.php">Home</a></li>
@@ -201,11 +201,6 @@
 
 				      </tr>
 					  <tr>
-					    <th>pwd</th>
-				        <td>---</td>
-
-				      </tr>
-					  <tr>
 					    <th>Phone</th>
 				        <td>---</td>
 
@@ -284,7 +279,7 @@
 				<p>Click for more details about the company</p>
 				
 				<?php
-				
+					//include "conn.php";
 					$servername="127.0.0.1";
 					$username="root";
 					$password="";
@@ -298,6 +293,7 @@
 					$sql="Select name,email from companys";
 					$result = $conn->query($sql);
 					
+					
 					  echo "<div class=\"table-responsive table-bordered\" style=\"border-color: black;border-width: 2px;\" >            
 						  <table class=\"table table-hover\" style=\"border-color: black;\" >
 							<thead>
@@ -308,7 +304,7 @@
 							</thead>
 							<tbody>
 							";
-								
+					//check for the count of no of rows retrived 		
 							while($row = $result->fetch_assoc()){
 							  echo "<tr id=\"clist\" onclick=\"trclick('".$row['email']."','".$row['name']."',this)\">";
 							  echo "<td>".$row['name']. "</td>";
@@ -368,12 +364,14 @@
 	  			text-transform: uppercase;
 	  			text-decoration: none;
 	  			overflow: hidden;
-	  			transition: 0.8s;		
+	  			transition: 0.8s;
+	  			width: 100%;
 	  			display:inline-grid;
   				justify-content: space-between;
   				align-items: center;
+  				padding: 30px 1-%;
   				background: #101116;
-  				
+  				height: 50px;
   				text-align: left;
 			}
 			#top-nav a{
@@ -381,7 +379,6 @@
 				font-weight: bold;
             	font-size: 15px;
             	letter-spacing: 2px;
-				border-radius: 35px;
 			}
 			
 			#top-nav a:hover{
@@ -404,7 +401,7 @@
 	  			display:inline-grid;
   				justify-content: space-between;
   				align-items: center;
-  				padding: 30px 1%;
+  				padding: 30px 1-%;
   				background: #101116;
   				height: auto;
 			}
@@ -480,7 +477,7 @@
 		  	}
 
 			body {
-			  background-image: url(j\ \(1\).png); 
+			  background-image: url('bg2.jpg'); 
 			  background-repeat: no-repeat; 
 			  background-size: cover;
 			  background-position: center;
@@ -612,6 +609,6 @@
 				border-width: 2px;
 			}
         </style>
-
-		
 </html>
+
+
